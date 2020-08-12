@@ -1,4 +1,13 @@
 NAME=app
 
 build:
-	docker build -t $(NAME) .
+	docker-compose build
+
+start:
+	docker-compose up
+
+stop:
+	docker-compose down
+
+list:
+	docker-compose ps
