@@ -1,4 +1,3 @@
-NAME=app
 
 build:
 	docker-compose build
@@ -11,3 +10,6 @@ stop:
 
 list:
 	docker-compose ps
+
+Pipfile.lock:
+	docker-compose exec app pipenv lock
