@@ -11,5 +11,8 @@ stop:
 list:
 	docker-compose ps
 
+shell:
+	docker-compose exec app bash
+
 Pipfile.lock:
 	docker-compose exec app pipenv lock
