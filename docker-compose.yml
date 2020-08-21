@@ -9,3 +9,5 @@ services:
       - "8000:8000"
     volumes:
       - ./boilerplate:/app
+    env_file:
+      - ./conf/env/.env.dev
