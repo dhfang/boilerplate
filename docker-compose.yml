@@ -5,9 +5,16 @@ services:
     container_name: app
     build: .
     command: bash -c "gunicorn -b 0.0.0.0:8000 boilerplate.wsgi"
-    ports:
-      - "8000:8000"
+    expose:
+      - 8000
     volumes:
       - ./boilerplate:/app
     env_file:
       - ./conf/env/.env.dev
+
+  nginx:
+    build: ./nginx
+    ports:
+      - 1337:80
+    depends_on:
+      - app
